@@ -56,7 +56,8 @@ internal class GradientDrawingLayer : ScrollableGraphViewDrawingLayer {
         
         let displacement = ((viewportWidth / viewportHeight) / 2.5) * self.bounds.height
         let topCentre = CGPoint(x: offset + self.bounds.width / 2, y: -displacement)
-        let bottomCentre = CGPoint(x: offset + self.bounds.width / 2, y: self.bounds.height)
+        //let bottomCentre = CGPoint(x: offset + self.bounds.width / 2, y: self.bounds.height)
+        let bottomCentre = CGPoint(x: offset + self.bounds.width / 2, y: self.bounds.height * 0.72)
         let startRadius: CGFloat = 0
         let endRadius: CGFloat = self.bounds.width
         

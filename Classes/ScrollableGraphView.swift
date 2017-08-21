@@ -297,7 +297,12 @@ import UIKit
             
             referenceLineView?.set(range: self.range)
             
-            self.addSubview(referenceLineView!)
+            if self.subviews.count > 2 {
+                self.subviews[2].backgroundColor = UIColor.clear
+                self.insertSubview(referenceLineView!, belowSubview: self.subviews[2])
+            } else {
+                self.addSubview(referenceLineView!)
+            }
         }
     }
     
