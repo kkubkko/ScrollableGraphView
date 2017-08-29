@@ -825,6 +825,11 @@ import UIKit
             let position = calculatePosition(atIndex: point, value: rangeMin)
             
             label.frame = CGRect(origin: CGPoint(x: position.x - label.frame.width / 2, y: position.y + ref.dataPointLabelTopMargin), size: label.frame.size)
+
+            if label.frame.maxX > self.bounds.size.width {
+                label.frame = CGRect(origin: CGPoint(x: self.bounds.size.width - label.frame.width, y: position.y + ref.dataPointLabelTopMargin), size: label.frame.size)
+                //label.isHidden = true
+            }
             
             let _ = labelsView.subviews.filter { $0.frame == label.frame }.map { $0.removeFromSuperview() }
             
