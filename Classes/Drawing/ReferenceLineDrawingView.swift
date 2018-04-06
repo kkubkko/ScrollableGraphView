@@ -195,6 +195,11 @@ internal class ReferenceLineDrawingView : UIView {
         switch(self.settings.referenceLinePosition) {
             
         case .left:
+            if tag == "0" {
+                leftLabel.text = ""
+                leftLabel.alpha = 0
+                break
+            }
             gaps.append((start: leftLabelStart.x, end: leftLabelEnd.x))
             self.addSubview(leftLabel)
             self.labels.append(leftLabel)
